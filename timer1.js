@@ -3,11 +3,8 @@ const num = args.map(x => Number(x));
 
 const timer = function(arr) {
 
-  
-
-  for (let i = 0; i < arr.length; i++) {
-    let item = arr[i];
-    if (item == undefined || item < 0 || isNaN(item)) {
+  for (let item of arr) {
+    if (item == undefined || item < 0 || Number.isNaN(item)) {
       console.log("Enter valid time value(s)");
     } else {
       setTimeout(() => {
@@ -16,6 +13,7 @@ const timer = function(arr) {
       , item * 1000)
     }
   }
+
 }
 
 timer(num);
